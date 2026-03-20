@@ -16,7 +16,7 @@ padding:0;
 }
 
 html,body{
-background:var(--bg);
+background:var(--bg); 
 color:var(--fg);
 font-family:var(--font-body);
 -webkit-font-smoothing:antialiased;
@@ -101,7 +101,9 @@ color:#bbb;
 .filter-btn.active,
 .filter-btn:hover{color:#000}
 
-
+.filter-btn--link {
+  text-decoration: none;
+}
 /* ── GRID ───────────────────────── */
 
 .work-grid{
