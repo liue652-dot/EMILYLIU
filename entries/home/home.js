@@ -7,6 +7,8 @@
   const siteSub   = document.querySelector('.site-sub');
   const cards     = Array.from(track ? track.querySelectorAll('.card') : []);
 
+  const isMobile = () => window.innerWidth <= 600;
+
   /* ─────────────────────────────────
      PAGE TRANSITION OVERLAY
   ───────────────────────────────── */
@@ -64,6 +66,13 @@
         siteTitle.style.color  = '';
         siteTitle.style.filter = '';
       });
+    }
+
+    // On mobile, CSS already makes titles visible (visibility: visible).
+    // Floaters are a desktop-only enhancement — skip them on mobile.
+    if (isMobile()) {
+      window._updateStickyTitles = () => {};
+      return;
     }
 
     const floaters = cards.map(card => {
@@ -206,6 +215,11 @@
 
   /* ─────────────────────────────────
      INTRO ANIMATION
+     Runs on all screen sizes.
+     On mobile the font-size clamp is
+     smaller but the animation logic is
+     identical — we read the computed
+     final size instead of hardcoding.
   ───────────────────────────────── */
 
   function runIntro() {
@@ -217,7 +231,8 @@
     siteTitle.style.transition = 'none';
     siteTitle.style.opacity    = '0';
 
-    siteTitle.style.fontSize = 'clamp(64px, 10vw, 130px)';
+    // Read the CSS-computed final font-size so mobile clamp is respected
+    const finalFontSize = getComputedStyle(siteTitle).fontSize;
     document.body.getBoundingClientRect();
 
     const vw = window.innerWidth;
@@ -272,7 +287,7 @@
       setTimeout(() => {
 
         siteTitle.style.transition = 'font-size 0.8s cubic-bezier(0.4,0,0.2,1)';
-        siteTitle.style.fontSize   = 'clamp(64px, 10vw, 130px)';
+        siteTitle.style.fontSize   = finalFontSize;
 
         setTimeout(() => {
           siteSub.style.transition = 'opacity 0.5s ease';
@@ -407,14 +422,11 @@
       currentImageIndex = imgIndex;
       const src = currentImages[imgIndex];
 
-      // Main content
       detailContent.innerHTML = '';
       detailContent.appendChild(makeMedia(src));
 
-      // Dots
       dots.forEach((d, i) => d.classList.toggle('active', i === imgIndex));
 
-      // Prev thumb
       if (imgIndex > 0) {
         prevBtn.classList.remove('hidden');
         prevThumb.innerHTML = '';
@@ -423,7 +435,6 @@
         prevBtn.classList.add('hidden');
       }
 
-      // Next thumb
       if (imgIndex < currentImages.length - 1) {
         nextBtn.classList.remove('hidden');
         nextThumb.innerHTML = '';
@@ -460,7 +471,6 @@
       detailPage.classList.remove('open');
       document.body.classList.remove('detail-open');
       detailDesc.classList.remove('visible');
-      // Stop any playing videos
       detailContent.querySelectorAll('video').forEach(v => v.pause());
     }
 
@@ -502,12 +512,34 @@
       if (e.key === 'ArrowLeft')  { if (currentImageIndex > 0) showImage(currentImageIndex - 1); }
       if (e.key === 'ArrowRight') { if (currentImageIndex < currentImages.length - 1) showImage(currentImageIndex + 1); }
     });
+
+    /* ── SWIPE SUPPORT FOR DETAIL ── */
+    let touchStartX = 0;
+    let touchStartY = 0;
+
+    detailPage.addEventListener('touchstart', e => {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+
+    detailPage.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - touchStartX;
+      const dy = e.changedTouches[0].clientY - touchStartY;
+      if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+      if (dx < 0 && currentImageIndex < currentImages.length - 1) {
+        showImage(currentImageIndex + 1);
+      } else if (dx > 0 && currentImageIndex > 0) {
+        showImage(currentImageIndex - 1);
+      }
+    }, { passive: true });
   }
 
   initDetailPage();
 
   /* ─────────────────────────────────
      HORIZONTAL SCROLL
+     Mouse drag + wheel only on desktop.
+     Mobile uses native vertical scroll.
   ───────────────────────────────── */
 
   if (outer) {
@@ -515,6 +547,7 @@
     let startX, scrollLeft;
 
     outer.addEventListener('mousedown', e => {
+      if (isMobile()) return;
       isDown     = true;
       startX     = e.pageX - outer.offsetLeft;
       scrollLeft = outer.scrollLeft;
@@ -532,7 +565,7 @@
     });
 
     outer.addEventListener('mousemove', e => {
-      if (!isDown) return;
+      if (!isDown || isMobile()) return;
       e.preventDefault();
       const x    = e.pageX - outer.offsetLeft;
       const walk = (x - startX) * 1.4;
@@ -541,6 +574,7 @@
     });
 
     outer.addEventListener('wheel', e => {
+      if (isMobile()) return;
       if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
         e.preventDefault();
         outer.scrollLeft += e.deltaY * 1.2;
