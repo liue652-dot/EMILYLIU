@@ -262,16 +262,11 @@ a.site-title {
 .resume-col {
   display: block;
   min-width: 0;
-  grid-row: 1; /* force both cols into the same row, never wrap */
+  grid-row: 1;
 }
 
-.resume-col:first-child {
-  grid-column: 1;
-}
-
-.resume-col:last-child {
-  grid-column: 2;
-}
+.resume-col:first-child { grid-column: 1; }
+.resume-col:last-child  { grid-column: 2; }
 
 .resume-col-label {
   font-family: var(--font-display);
@@ -351,33 +346,28 @@ a.site-title {
   opacity: 1;
 }
 
-/* ── RESPONSIVE ──────────────────────────── */
-@media (max-width: 760px) {
-  .info-body {
-    grid-template-columns: 1fr;
-    padding: 0 20px;
-  }
+/* ── SKILLS SECTION ──────────────────────── */
+.skills-section {
+  padding: 0 28px 60px;
+}
 
-  .info-photo {
-    padding-right: 0;
-    padding-top: 30px;
-  }
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 0 80px;
+  align-items: start;
+}
 
-  .photo-frame {
-    aspect-ratio: 4/3;
-  }
+.skills-col { min-width: 0; }
 
-  .info-text {
-    padding-top: 36px;
-    padding-bottom: 80px;
-  }
-
-  .header { padding: 16px 20px 0; }
-  .divider { width: calc(100% - 40px); margin: 14px 20px 0; }
-
-  .resume-section { padding: 0 20px 100px; margin-top: 40px; }
-  .resume-grid { gap: 0 24px; }
-  .resume-entry { grid-template-columns: 60px 1fr; gap: 0 12px; }
+.skills-list {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(14px, 1.5vw, 18px);
+  letter-spacing: 0.02em;
+  line-height: 1.6;
+  color: var(--fg);
+  transition: color var(--transition-speed) ease;
 }
 
 /* ── LOGO PULSE ANIMATION ────────────────── */
@@ -394,39 +384,215 @@ a.site-title.logo-pulse {
   transform-origin: center;
 }
 
-/* ── SKILLS SECTION ──────────────────────── */
-.skills-section {
-  padding: 0 28px 60px;
-}
+/* ── MOBILE (≤ 600px) ────────────────────── */
+@media (max-width: 600px) {
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 0 80px;
-  align-items: start;
-}
+  /* Header: single compact row */
+  .header {
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    padding: 14px 16px 0;
+  }
 
-.skills-col {
-  min-width: 0;
-}
+  .header__center { flex: 1; text-align: center; }
 
-.skills-list {
-  font-family: var(--font-display);
-  font-weight: 800;
-  font-size: clamp(14px, 1.5vw, 18px);
-  letter-spacing: 0.02em;
-  line-height: 1.6;
-  color: var(--fg);
-  transition: color var(--transition-speed) ease;
-}
+  a.site-title {
+    font-size: clamp(28px, 10vw, 52px);
+    line-height: 1;
+  }
 
-@media (max-width: 760px) {
+  .site-sub {
+    font-size: 9px;
+    margin-top: 4px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+    padding: 4px 0 0;
+    white-space: nowrap;
+  }
+
+  .divider {
+    width: calc(100% - 32px);
+    margin: 12px 16px 0;
+  }
+
+  /* Stack photo above text */
+  .info-body {
+    grid-template-columns: 1fr;
+    padding: 0 16px;
+    min-height: unset;
+  }
+
+  .info-photo {
+    padding-right: 0;
+    padding-top: 24px;
+  }
+
+  .photo-frame {
+    aspect-ratio: 4/3;
+    max-width: 100%;
+  }
+
+  .info-text {
+    padding-top: 28px;
+    padding-bottom: 72px; /* clear fixed footer */
+  }
+
+  .info-bio p {
+    font-size: clamp(18px, 5vw, 24px);
+    margin-bottom: 20px;
+  }
+
+  .info-contact {
+    margin-top: 32px;
+    gap: 6px;
+  }
+
+  .contact-item {
+    font-size: clamp(16px, 5vw, 22px);
+  }
+
+  /* Resume: single column, tighter */
+  .resume-section {
+    padding: 0 16px 80px;
+    margin-top: 36px;
+  }
+
+  .resume-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .resume-col {
+    grid-column: 1 !important;
+    grid-row: auto !important;
+    margin-bottom: 40px;
+  }
+
+  .resume-divider {
+    margin-bottom: 32px;
+  }
+
+  .resume-col-label {
+    margin-bottom: 20px;
+  }
+
+  .resume-entry {
+    grid-template-columns: 72px 1fr;
+    gap: 0 12px;
+    margin-bottom: 24px;
+  }
+
+  .resume-year {
+    font-size: 12px;
+  }
+
+  .resume-role {
+    font-size: clamp(16px, 4.5vw, 20px);
+  }
+
+  .resume-place {
+    font-size: 12px;
+  }
+
+  .resume-desc {
+    font-size: 12px;
+    max-width: 100%;
+  }
+
+  /* Skills: single column */
+  .skills-section {
+    padding: 0 16px 60px;
+  }
+
   .skills-grid {
     grid-template-columns: 1fr;
-    gap: 40px 0;
+    gap: 32px 0;
+  }
+
+  .skills-list {
+    font-size: clamp(13px, 4vw, 16px);
+  }
+
+  /* Fixed footer elements — keep them reachable */
+  .footer-tagline {
+    bottom: 12px;
+    right: 16px;
+    font-size: 10px;
+  }
+
+  .color-toggle-hint {
+    bottom: 12px;
+    left: 16px;
+    font-size: 10px;
+  }
+}
+
+/* ── TABLET (601–900px) ──────────────────── */
+@media (min-width: 601px) and (max-width: 900px) {
+
+  .header {
+    padding: 16px 20px 0;
+  }
+
+  .nav-link {
+    font-size: 20px;
+    padding: 14px 16px 0;
+  }
+
+  a.site-title {
+    font-size: clamp(48px, 8vw, 90px);
+  }
+
+  .divider {
+    width: calc(100% - 40px);
+    margin: 14px 20px 0;
+  }
+
+  .info-body {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    min-height: unset;
+  }
+
+  .info-photo {
+    padding-right: 0;
+    padding-top: 30px;
+  }
+
+  .photo-frame {
+    aspect-ratio: 4/3;
+    max-width: 480px;
+  }
+
+  .info-text {
+    padding-top: 36px;
+    padding-bottom: 80px;
+  }
+
+  .resume-section {
+    padding: 0 20px 100px;
+    margin-top: 40px;
+  }
+
+  .resume-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0 32px;
+  }
+
+  .resume-entry {
+    grid-template-columns: 60px 1fr;
+    gap: 0 12px;
   }
 
   .skills-section {
     padding: 0 20px 40px;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 40px;
   }
 }
