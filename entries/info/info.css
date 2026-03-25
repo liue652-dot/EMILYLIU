@@ -1,5 +1,3 @@
-
-
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -10,8 +8,8 @@
   --bg: #cc0000;
   --fg: #ffffff;
   --accent: #F2E6D0;
-  --font-display: 'Barlow Condensed', 'Arial Narrow', Arial, sans-serif;
-  --font-body: 'Barlow', Arial, sans-serif;
+  --font-display: "akzidenz-grotesk-next-conden", sans-serif;
+  --font-body: "akzidenz-grotesk-next-pro", sans-serif;
   --transition-speed: 0.6s;
 }
 
@@ -43,8 +41,9 @@ html, body {
 .nav-link {
   text-decoration: none;
   color: var(--fg);
-  font-family: var(--font-display);
-  font-weight: 800;
+  font-family: "akzidenz-grotesk-next-conden", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: 30px;
   letter-spacing: .04em;
   padding: 22px 28px 0;
@@ -61,8 +60,9 @@ html, body {
 a.site-title {
   display: block;
   text-decoration: none;
-  font-family: var(--font-display);
-  font-weight: 900;
+  font-family: "akzidenz-grotesk-next-conden", sans-serif;
+  font-weight: 700;
+  font-style: normal;
   font-size: clamp(64px, 10vw, 130px);
   letter-spacing: -0.01em;
   line-height: 0.9;
@@ -73,8 +73,8 @@ a.site-title {
 
 .site-sub {
   margin-top: 10px;
-  font-family: var(--font-display);
-  font-weight: 800;
+  font-family: "akzidenz-grotesk-next-conden", sans-serif;
+  font-weight: 700;
   font-size: clamp(13px, 1.4vw, 17px);
   letter-spacing: 0.01em;
   color: var(--fg);
@@ -141,8 +141,8 @@ a.site-title {
 }
 
 .info-bio p {
-  font-family: var(--font-display);
-  font-weight: 800;
+  font-family: "akzidenz-grotesk-next-conden", sans-serif;
+  font-weight: 700;
   font-size: clamp(22px, 3vw, 30px);
   line-height: 1.15;
   letter-spacing: 0.01em;
@@ -156,8 +156,8 @@ a.site-title {
 }
 
 .press-line {
-  font-family: var(--font-display);
-  font-weight: 800;
+  font-family: "akzidenz-grotesk-next-conden", sans-serif;
+  font-weight: 700;
   font-size: clamp(15px, 1.8vw, 20px);
   letter-spacing: 0.01em;
   color: var(--fg);
@@ -183,8 +183,8 @@ a.site-title {
 
 .contact-item {
   text-decoration: none;
-  font-family: var(--font-display);
-  font-weight: 800;
+  font-family: "akzidenz-grotesk-next-conden", sans-serif;
+  font-weight: 700;
   font-size: clamp(18px, 2.2vw, 25px);
   letter-spacing: 0.02em;
   color: var(--fg);
@@ -198,8 +198,8 @@ a.site-title {
   position: fixed;
   bottom: 22px;
   right: 28px;
-  font-family: var(--font-display);
-  font-weight: 800;
+  font-family: "akzidenz-grotesk-next-conden", sans-serif;
+  font-weight: 700;
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -212,8 +212,8 @@ a.site-title {
   position: fixed;
   bottom: 22px;
   left: 28px;
-  font-family: var(--font-display);
-  font-weight: 800;
+  font-family: "akzidenz-grotesk-next-conden", sans-serif;
+  font-weight: 700;
   font-size: 11px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -251,7 +251,7 @@ a.site-title {
 .resume-col {
   display: block;
   min-width: 0;
-  grid-row: 1; /* force both cols into the same row, never wrap */
+  grid-row: 1;
 }
 
 .resume-col:first-child {
@@ -263,8 +263,8 @@ a.site-title {
 }
 
 .resume-col-label {
-  font-family: var(--font-display);
-  font-weight: 900;
+  font-family: "akzidenz-grotesk-next-conden", sans-serif;
+  font-weight: 700;
   font-size: clamp(11px, 1vw, 13px);
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -283,8 +283,8 @@ a.site-title {
 }
 
 .resume-year {
-  font-family: var(--font-display);
-  font-weight: 800;
+  font-family: "akzidenz-grotesk-next-pro", sans-serif;
+  font-weight: 500;
   font-size: clamp(13px, 1.3vw, 15px);
   letter-spacing: 0.06em;
   color: var(--fg);
@@ -295,8 +295,8 @@ a.site-title {
 }
 
 .resume-role {
-  font-family: var(--font-display);
-  font-weight: 900;
+  font-family: "akzidenz-grotesk-next-conden", sans-serif;
+  font-weight: 700;
   font-size: clamp(18px, 2vw, 24px);
   letter-spacing: 0.01em;
   line-height: 1.1;
@@ -307,8 +307,8 @@ a.site-title {
 }
 
 .resume-place {
-  font-family: var(--font-display);
-  font-weight: 700;
+  font-family: "akzidenz-grotesk-next-pro", sans-serif;
+  font-weight: 500;
   font-size: clamp(13px, 1.3vw, 15px);
   letter-spacing: 0.04em;
   color: var(--fg);
@@ -318,7 +318,7 @@ a.site-title {
 }
 
 .resume-desc {
-  font-family: var(--font-body);
+  font-family: "akzidenz-grotesk-next-pro", sans-serif;
   font-weight: 400;
   font-size: clamp(12px, 1.1vw, 13px);
   line-height: 1.55;
@@ -340,47 +340,6 @@ a.site-title {
   opacity: 1;
 }
 
-@media (max-width: 760px) {
-  .info-body {
-    grid-template-columns: 1fr;
-    padding: 0 20px;
-  }
-
-  .info-photo {
-    padding-right: 0;
-    padding-top: 30px;
-  }
-
-  .photo-frame {
-    aspect-ratio: 4/3;
-  }
-
-  .info-text {
-    padding-top: 36px;
-    padding-bottom: 80px;
-  }
-
-  .header { padding: 16px 20px 0; }
-  .divider { width: calc(100% - 40px); margin: 14px 20px 0; }
-
-  .resume-section { padding: 0 20px 100px; margin-top: 40px; }
-  .resume-grid { gap: 0 24px; }
-  .resume-entry { grid-template-columns: 60px 1fr; gap: 0 12px; }
-}
-
-@keyframes logoPulse {
-  0%   { transform: scale(1); }
-  35%  { transform: scale(0.72); }
-  70%  { transform: scale(1.06); }
-  100% { transform: scale(1); }
-}
-
-a.site-title.logo-pulse {
-  animation: logoPulse 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-  display: inline-block;
-  transform-origin: center;
-}
-
 .skills-section {
   padding: 0 28px 60px;
 }
@@ -397,8 +356,8 @@ a.site-title.logo-pulse {
 }
 
 .skills-list {
-  font-family: var(--font-display);
-  font-weight: 800;
+  font-family: "akzidenz-grotesk-next-pro", sans-serif;
+  font-weight: 400;
   font-size: clamp(14px, 1.5vw, 18px);
   letter-spacing: 0.02em;
   line-height: 1.6;
@@ -406,21 +365,21 @@ a.site-title.logo-pulse {
   transition: color var(--transition-speed) ease;
 }
 
-@media (max-width: 760px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 40px 0;
-  }
-
-  .skills-section {
-    padding: 0 20px 40px;
-  }
+@keyframes logoPulse {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(0.72); }
+  70%  { transform: scale(1.06); }
+  100% { transform: scale(1); }
 }
 
+a.site-title.logo-pulse {
+  animation: logoPulse 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  display: inline-block;
+  transform-origin: center;
+}
 
 @media (max-width: 760px) {
 
-  /* MAIN INFO GRID */
   .info-body {
     grid-template-columns: 1fr;
     gap: 30px;
@@ -431,12 +390,21 @@ a.site-title.logo-pulse {
     height: auto;
   }
 
-  /* PHOTO FULL WIDTH */
   .photo-frame {
     max-width: 100%;
+    aspect-ratio: 4/3;
   }
 
-  /* RESUME — STACK COLUMNS */
+  .info-photo {
+    padding-right: 0;
+    padding-top: 30px;
+  }
+
+  .info-text {
+    padding-top: 36px;
+    padding-bottom: 80px;
+  }
+
   .resume-grid {
     grid-template-columns: 1fr;
     gap: 60px;
@@ -449,6 +417,7 @@ a.site-title.logo-pulse {
 
   .resume-entry {
     grid-template-columns: 70px 1fr;
+    gap: 0 12px;
   }
 
   .resume-desc {
@@ -458,6 +427,15 @@ a.site-title.logo-pulse {
   .skills-grid {
     grid-template-columns: 1fr;
     gap: 50px;
+  }
+
+  .skills-section {
+    padding: 0 20px 40px;
+  }
+
+  .resume-section {
+    padding: 0 20px 100px;
+    margin-top: 40px;
   }
 
   .header {
@@ -482,7 +460,6 @@ a.site-title.logo-pulse {
     margin: 14px 14px 0;
   }
 
-  /* FOOTER HINTS SAFE AREA */
   .footer-tagline {
     right: 14px;
     bottom: 14px;
