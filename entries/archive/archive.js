@@ -1,34 +1,6 @@
 
 const WORKS = [
   {
-    title:  "ShengYuan Incense",
-    src:    "img/shengyuan/cover.png",
-    images: "img/shengyuan/sheng.png, img/shengyuan/four.png",
-    desc:   "08 · 2025 <br> Adobe Illustrator, Photoshop, Figma <br><br> Developing technical skills such as using Figma and Adobe, working with a professional team, and co-designing the landing pages for Luncare (customer-based/professional-based) in Singapore. Learning how to communicate products to the consumer and the professional was another step into my understanding of Communications design.",
-    link:   ""
-  },
-  {
-    title:  "Dencare Packaging",
-    src:    "img/liferoot/mock.png",
-    images: "graphics/liferoots/pack.png, graphics/liferoots/kit.png, graphics/liferoots/mock.png",
-    desc:   "08 · 2025 <br> Adobe Illustrator, Photoshop, Figma <br><br> Developing technical skills such as using Figma and Adobe, working with a professional team, and co-designing the landing pages for Luncare (customer-based/professional-based) in Singapore. Learning how to communicate products to the consumer and the professional was another step into my understanding of Communications design.",
-    link:   ""
-  },
-  {
-    title:  "Poster for Jetlag",
-    src:    "img/uturn.png",
-    images: "img/jetlag.png,img/uturn2.png,img/jetlag.png",
-    desc:   "03 · 2026 <br> Adobe Illustrator, Photoshop <br><br> Event poster for musical gig, hosted by SOB NYC and Jetlag <br><br> <a href='https://www.instagram.com/p/DWec1MSAVA2/' target='_blank'>Link to Post ↗</a>",
-    link:   ""
-  },
-  {
-    title:  "Spirit Collage",
-    src:    "img/collage1.png",
-    images: "img/collage1.png,img/collage2.png,img/collage3.png",
-    desc:   "04 · 2025 <br> Digital and analog, variety of sizes, Adobe Photoshop <br><br> Spirit was inspired and made by exploring the institutionalisation of artworks from the Fluxus movement. I aimed to emulate the feeling and philosophy of the movmement through various collages, combining technology and humanity. The pieces are specifically inspired by Fluxus artist Nam June Paik. ",
-    link:   ""
-  },
-  {
     title:  "Wire",
     src:    "img/wire/2.png",
     images: "img/wire/3.png,img/wire/1.jpeg,img/wire/2.png",
@@ -71,6 +43,41 @@ const WORKS = [
     src:    "img/graphite/drawtea.jpeg",
     images: "img/graphite/drawtea.jpeg,img/graphite/drawbod.jpeg,img/graphite/drawbod2.jpeg,img/graphite/drawshoe.jpeg",
     desc:   "10 - 12 · 2024 <br> Graphite on paper<br><br>Skills demonstrated through obervational drawings, with and without shading. I mostly focused on the body and objects, personal to me. ",
+    link:   ""
+  },
+  {
+    title:  "ShengYuan Incense",
+    src:    "img/shengyuan/cover.png",
+    images: "img/shengyuan/sheng.png, img/shengyuan/four.png",
+    desc:   "08 · 2025 <br> Figma <br><br> Co-designing a traditional Chinese inspired landing page for ShengYuan Insence, capturing the essence of history, luxury and tradition. ",
+    link:   ""
+  },
+  {
+    title:  "Shangrila",
+    src:    "img/shangrila/6.png",
+    images: "img/shangrila/1.jpg,img/shangrila/2.jpg,img/shangrila/3.jpg,img/shangrila/4.jpg,img/shangrila/5.jpg,img/shangrila/6.png,img/shangrila/7.jpg,img/shangrila/8.png,img/shangrila/9.png,img/shangrila/10.png",
+    desc:   "02 - 03 · 2025 <br> Digital photography, Adobe Lightroom Classic <br><br> Commenting on the juxtaposition between life and death, happiness and sadness. One is incapable of existing without the other, leading humans to never experience true fulfillment. The search for freedom in all forms continue to control us, yet we are unable to let go of our greed, as we keep spinning in the toxic environment we life in",
+    link:   ""
+  },
+  {
+    title:  "Dencare Packaging",
+    src:    "img/liferoot/mock.png",
+    images: "graphics/liferoots/pack.png, graphics/liferoots/kit.png, graphics/liferoots/mock.png",
+    desc:   "08 · 2025 <br> Adobe Illustrator, Photoshop, Figma <br><br> Developing technical skills such as using Figma and Adobe, working with a professional team, and co-designing the landing pages for Luncare (customer-based/professional-based) in Singapore. Learning how to communicate products to the consumer and the professional was another step into my understanding of Communications design.",
+    link:   ""
+  },
+  {
+    title:  "Posters for Jetlag",
+    src:    "img/uturn.png",
+    images: "img/uturn2.png,img/uturn.png,img/sravya.png,img/jetlag.png",
+    desc:   "2026 <br> Adobe Photoshop, Adobe Illustrator <br><br> Event posters for musical gig, some hosted by SOB NYC and Jetlag <br><br> <a href='https://www.instagram.com/p/DWec1MSAVA2/' target='_blank'>Link to Post ↗</a>",
+    link:   ""
+  },
+  {
+    title:  "Spirit Collage",
+    src:    "img/collage1.png",
+    images: "img/collage1.png,img/collage2.png,img/collage3.png",
+    desc:   "04 · 2025 <br> Digital and analog, variety of sizes, Adobe Photoshop <br><br> Spirit was inspired and made by exploring the institutionalisation of artworks from the Fluxus movement. I aimed to emulate the feeling and philosophy of the movmement through various collages, combining technology and humanity. The pieces are specifically inspired by Fluxus artist Nam June Paik. ",
     link:   ""
   },
   {
